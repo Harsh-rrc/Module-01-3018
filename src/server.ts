@@ -1,11 +1,7 @@
-import express from 'express';
+import app from './app';
 
-const app = express();
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
-// Basic route for testing
-app.get('/', (req, res) => {
-  res.json({ message: 'Server is running!' });
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-export default app;
