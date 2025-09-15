@@ -7,8 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "lint": "tsc --noEmit && echo \"Lint passed!\"", 
+  "test": "jest",
+  "test:watch": "jest --watch",
+  "test:coverage": "jest --coverage"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Harsh-rrc/Module-01-3018.git"
