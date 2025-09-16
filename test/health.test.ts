@@ -20,6 +20,7 @@ describe("GET /api/v1/health", () => {
   });
 });
 
+// Ensure all required endpoints exist.
 describe("Required Endpoints", () => {
   it("should have health check endpoint", async () => {
     const response = await request(app).get("/api/v1/health");
@@ -42,6 +43,7 @@ describe("Required Endpoints", () => {
   });
 });
 
+// Functional tests for portfolio endpoints.
 describe("API Endpoints", () => {
   describe("GET /api/v1/portfolio/performance", () => {
     it("should return portfolio performance with default values", async () => {
@@ -67,6 +69,7 @@ describe("API Endpoints", () => {
     });
   });
 
+  // Functional tests for largest holding and asset allocation.
   describe("GET /api/v1/portfolio/largest-holding", () => {
     it("should return the largest holding from sample assets", async () => {
       const response = await request(app).get(
@@ -77,10 +80,10 @@ describe("API Endpoints", () => {
       expect(response.body).toHaveProperty("largestHolding");
       expect(response.body.largestHolding).toHaveProperty("name");
       expect(response.body.largestHolding).toHaveProperty("value");
-      // Removed type check, since API doesn’t return it
     });
   });
 
+  // Functional tests for asset allocation.
   describe("GET /api/v1/portfolio/allocation", () => {
     it("should return asset allocation percentages", async () => {
       const response = await request(app).get("/api/v1/portfolio/allocation");
@@ -97,7 +100,7 @@ describe("API Endpoints", () => {
         }
       );
 
-      // Should add up to approximately 100%
+      // Percentages should sum to ~100 (allowing for rounding errors)
       const totalPercentage = allocations.reduce(
         (sum: number, a: { name: string; percentage: number }) =>
           sum + a.percentage,

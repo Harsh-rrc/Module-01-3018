@@ -1,5 +1,6 @@
 import { findLargestHolding, Asset } from '../src/portfolio/portfolioPerformance';
 
+// Unit tests for findLargestHolding function.
 describe('findLargestHolding', () => {
   it('finds largest asset in normal case', () => {
     const assets: Asset[] = [

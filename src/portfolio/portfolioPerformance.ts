@@ -13,10 +13,7 @@ export interface Asset {
   type?: string;
 }
 
-/**
- * calculatePortfolioPerformance
- * - No 'if' statements (uses nested ternary expressions)
- */
+// Function implementations.
 export function calculatePortfolioPerformance(
   initialInvestment: number,
   currentValue: number
@@ -46,11 +43,7 @@ export function calculatePortfolioPerformance(
   };
 }
 
-/**
- * findLargestHolding
- * - Returns the largest asset (first occurrence on ties)
- * - Returns null for empty array
- */
+// Returns the asset with the highest value.
 export function findLargestHolding(assets: Asset[]): Asset | null {
   if (!Array.isArray(assets) || assets.length === 0) return null;
 
@@ -59,11 +52,7 @@ export function findLargestHolding(assets: Asset[]): Asset | null {
   );
 }
 
-/**
- * calculateAssetAllocation
- * - Returns array [{ name, percentage }]
- * - For empty input returns []
- */
+// Calculates the percentage allocation of each asset.
 export function calculateAssetAllocation(
   assets: Asset[]
 ): { name: string; percentage: number }[] {

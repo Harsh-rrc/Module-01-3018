@@ -1,5 +1,6 @@
 import { calculatePortfolioPerformance } from '../src/portfolio/portfolioPerformance';
 
+// Unit tests for calculatePortfolioPerformance function.
 describe('calculatePortfolioPerformance', () => {
   it('returns correct result for profit', () => {
     const result = calculatePortfolioPerformance(10000, 12000);

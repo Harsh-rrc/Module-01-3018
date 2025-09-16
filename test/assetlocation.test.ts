@@ -1,5 +1,6 @@
 import { calculateAssetAllocation } from '../src/portfolio/portfolioPerformance';
 
+// Unit tests for calculateAssetAllocation function.
 describe('calculateAssetAllocation', () => {
   it('calculates even allocation correctly', () => {
     const assets = [
