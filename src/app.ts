@@ -19,6 +19,7 @@ app.get('/api/v1/health', (req, res) => {
   });
 });
 
+// Portfolio performance endpoint with query parameters for initialInvestment and currentValue.
 app.get('/api/v1/portfolio/performance', (req, res) => {
   const initial = Number(req.query.initialInvestment) || 10000;
   const current = Number(req.query.currentValue) || 12000;
@@ -30,6 +31,7 @@ app.get('/api/v1/portfolio/performance', (req, res) => {
   res.json(calculatePortfolioPerformance(initial, current));
 });
 
+// Endpoint to get the largest holding from a sample asset list.
 app.get('/api/v1/portfolio/largest-holding', (req, res) => {
   const sampleAssets: Asset[] = [
     { name: 'Stocks', value: 5000 },
@@ -39,6 +41,7 @@ app.get('/api/v1/portfolio/largest-holding', (req, res) => {
   res.json({ largestHolding: findLargestHolding(sampleAssets) });
 });
 
+// Endpoint to get asset allocation percentages from a sample asset list.
 app.get('/api/v1/portfolio/allocation', (req, res) => {
   const sampleAssets: Asset[] = [
     { name: 'Stocks', value: 5000 },
@@ -48,6 +51,7 @@ app.get('/api/v1/portfolio/allocation', (req, res) => {
   res.json({ allocation: calculateAssetAllocation(sampleAssets) });
 });
 
+// Start the server.
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
