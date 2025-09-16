@@ -7,14 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "start": "node dist/app.js",
-    "build": "tsc",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "start": "node dist/server.js",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
